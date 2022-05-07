@@ -1,0 +1,38 @@
+<div class="container">
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <div fxFlex="40">
+      <mat-card>
+        <mat-card-content class="container-card">
+
+          <div class="logo">
+            <img src="./assets/img/login-img/endalia-logo.svg" alt="endalia-logo">
+          </div>
+
+          <div class="text-welcome">
+            <h2>Bienvenido/a</h2>
+            <p>Introduce tus credenciales para acceder</p>
+          </div>
+
+          <form [formGroup]="this.form" class="container-form">
+            <div class="container-input" fxLayout="row wrap">
+              <div fxFlex="20" class="label-form">Usuario</div>
+              <input formControlName="email" fxFlex="80" class="input-ctrl-style" [class.error]="this.email.hasError('required') && this.email.touched" matNativeControl type="text" name="user" id="user">
+            </div>
+
+            <div class="container-input" fxLayout="row wrap">
+              <div fxFlex="20" class="label-form">Contraseña</div>
+              <input  formControlName="password" fxFlex="80" class="input-ctrl-style" [class.error]="this.password.hasError('required') && this.password.touched" matNativeControl type="password" name="password"
+                id="password">
+            </div>
+
+            <div class="container-btn" fxLayout="row wrap" fxLayoutAlign="center ">
+              <button [disabled]="!this.form.valid" class="btn btn-primary" mat-button>Acceder</button>
+            </div>
+
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+</div>
