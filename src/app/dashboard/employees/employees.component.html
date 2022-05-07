@@ -1,0 +1,20 @@
+<div class="container">
+  <div fxLayout="column">
+    <div>
+      <h2>Directorio de empleados</h2>
+    </div>
+
+    <div>
+      <div class="container-input" fxLayout="row wrap">
+        <input (keyup)="this.filterEmployeers($event)" placeholder="Buscar" fxFlex="50" class="input-ctrl-style" matNativeControl type="text"
+          name="search-employees" id="search-employees">
+      </div>
+    </div>
+
+    <div class="container-all-employees" fxLayout="row wrap" fxLayoutAlign="space-between center">
+      <div fxFlex="49" *ngFor="let item of this.allEmployeers.filteredData" >
+        <app-employees-card [employeer]="item"></app-employees-card>
+      </div>
+    </div>
+  </div>
+</div>

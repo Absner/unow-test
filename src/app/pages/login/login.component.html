@@ -1,5 +1,5 @@
 <div class="container">
-  <div fxLayout="row wrap" fxLayoutAlign="center center">
+  <div fxLayout="row wrap" fxLayoutAlign="center center" class="box" >
     <div fxFlex="40">
       <mat-card>
         <mat-card-content class="container-card">
@@ -16,7 +16,7 @@
           <form [formGroup]="this.form" class="container-form">
             <div class="container-input" fxLayout="row wrap">
               <div fxFlex="20" class="label-form">Usuario</div>
-              <input formControlName="email" fxFlex="80" class="input-ctrl-style" [class.error]="this.email.hasError('required') && this.email.touched" matNativeControl type="text" name="user" id="user">
+              <input formControlName="email" fxFlex="80" class="input-ctrl-style" [class.error]="(this.email.hasError('required') || this.email.hasError('pattern') ) && this.email.touched" matNativeControl type="text" name="user" id="user">
             </div>
 
             <div class="container-input" fxLayout="row wrap">
@@ -26,7 +26,16 @@
             </div>
 
             <div class="container-btn" fxLayout="row wrap" fxLayoutAlign="center ">
-              <button [disabled]="!this.form.valid" class="btn btn-primary" mat-button>Acceder</button>
+              <button (click)="this.login();" [disabled]="!this.form.valid" class="btn btn-primary" mat-button>Acceder</button>
+            </div>
+
+            <div class="message" *ngIf="(this.email.hasError('required') || this.email.hasError('pattern') ) && this.email.touched" >
+              <div *ngIf="this.email.hasError('required')">Campo requerido</div>
+              <div *ngIf="this.email.hasError('pattern')">Error formato de Email</div>
+            </div>
+
+            <div class="message" *ngIf="message" >
+              {{this.message}}
             </div>
 
           </form>

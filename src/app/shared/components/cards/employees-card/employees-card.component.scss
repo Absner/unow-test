@@ -1,0 +1,46 @@
+.container-employees {
+    padding: 1rem;
+    background-color: #fafafa;
+    border: 1px solid #dddbdb;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+
+    .employeer-avatar-container {
+        .employeer-avatar {
+            width: 90px;
+            height: 90px;
+            background-color: aquamarine;
+            border-radius: 50%;
+            position: relative;
+            .avatar {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+        }
+    }
+
+    .employeer-data {
+        .full-name, .position-employeer, .phone, .email {
+            line-height: 1.4rem;
+        }
+        .full-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .position-employeer {
+            font-size: 1rem;
+        }
+        .phone, .email {
+            font-size: .8rem;
+            font-style: italic;
+            color: rgb(135, 133, 133);
+        }
+    }
+}

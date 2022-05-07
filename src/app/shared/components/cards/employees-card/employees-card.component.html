@@ -1,0 +1,16 @@
+<div class="container-employees">
+    <div fxLayout="row wrap">
+        <div fxFlex="25" class="employeer-avatar-container" >
+            <div class="employeer-avatar">
+                <img class="avatar" [src]="this.employeer.avatar_employeer" alt="avatar_employeer">
+            </div>
+        </div>
+        <div fxFlex="70" class="employeer-data" >
+            <div class="full-name">{{this.employeer.last_name + ' ' + this.employeer.first_name}}</div>
+            <div class="position-employeer">{{this.employeer.position}}</div>
+            <div class="phone">{{this.employeer.phone ? this.employeer.phone : 'N/D'}}</div>
+            <div class="email">{{this.employeer.email ? this.employeer.email : 'N/D'}}</div>
+        </div>
+    </div>
+
+</div>

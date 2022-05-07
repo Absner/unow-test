@@ -8,6 +8,8 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from 'src/app/shared/auth.service';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule
-  ]
+    MatButtonModule,
+    HttpClientModule
+  ],
+  providers: [AuthService]
 })
 export class LoginModule { }
